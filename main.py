@@ -2,6 +2,6 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
-@app.get("/api-endpoint")
+@app.get("/")
 async def first_api():
-    return {"message": "Hello Adrian!"}
+    return {"message": "Hello Adrian!!"}
