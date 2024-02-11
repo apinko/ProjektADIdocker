@@ -1,4 +1,5 @@
 from fastapi import Body, FastAPI
+from os import environ as env
 
 app = FastAPI()
 
@@ -12,6 +13,9 @@ BOOKS = [
     {'title': 'Title Six', 'author': 'Author Two', 'category': 'math'}
 ]
 
+@app.get("/")
+def index():
+    return{"details": f"Hello Adrian! Secret = {env['MY_VARIABLE']}"}
 
 @app.get("/books")
 async def read_all_books():
